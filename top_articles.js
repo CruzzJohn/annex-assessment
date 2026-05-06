@@ -8,13 +8,10 @@ async function topArticles(limit) {
 
     try {
       const res = await fetch(url);
-
-      // Basic response validation
-      if (!res.ok) return null;
+        if (!res.ok) return null;
 
       return await res.json();
     } catch (err) {
-      // In production: retry/backoff/logging could be applied here
       return null;
     }
   }
@@ -41,7 +38,6 @@ async function topArticles(limit) {
     }
   }
 
-  // Sort by engagement first, then lexicographically (descending)
   articles.sort((a, b) => {
     if (b.comments !== a.comments) {
       return b.comments - a.comments;
