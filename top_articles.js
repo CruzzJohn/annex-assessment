@@ -27,7 +27,6 @@ async function topArticles(limit) {
     if (!pageData?.data) continue;
 
     for (const item of pageData.data) {
-      // Prefer title; fallback due to inconsistent API schema as per spec
       const name = item.title || item.story_title;
 
       if (!name) continue;
