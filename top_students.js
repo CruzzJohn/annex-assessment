@@ -4,7 +4,6 @@ function topStudents(students) {
   }
 
   const sorted = [...students].sort((a, b) => {
-    // Primary: higher scores first
     if (b.score !== a.score) {
       return b.score - a.score;
     }
